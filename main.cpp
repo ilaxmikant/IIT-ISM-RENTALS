@@ -1,24 +1,21 @@
-#include <iostream>
-#include <stdlib.h>
-#include <iomanip>
 #include <fstream>
 #include <bits/stdc++.h>
 #include <windows.h>
 #include <unistd.h>
 using namespace std;
-#define B_MAG "\x1B[45m"
-#define MAG "\x1B[35m"
-#define BLU "\x1B[34m"
+#define CYAN "\x1B[36m"
+#define GREEN "\x1B[32m"
+#define YELLOW "\x1B[33m"
 #define B_BLU "\x1B[44m"
 #define B_RED "\x1B[41;1m"
 #define RED "\x1B[31;1m"
 #define RE "\x1B[31m"
-#define B_CYAN "\x1B[46m"
-#define CYAN "\x1B[36m"
-#define GRN "\x1B[32m"
-#define YEL "\x1B[33m"
 #define RESET "\x1B[0m"
 #define BOLD "\x1B[1m"
+#define B_MAG "\x1B[45m"
+#define MAG "\x1B[35m"
+#define BLU "\x1B[34m"
+#define B_CYAN "\x1B[46m"
 
 float trent = 0;
 int tcar = 0;
@@ -31,26 +28,25 @@ int n;
 char ch;
 bool tnc()
 {
-	std::cout << "\n\nTerms and Conditions:\n";
-    std::cout << "1. Age Requirement: The driver must be of a certain age and must have a valid driver's license.\n";
-    std::cout << "2. Payment: The renter must provide a valid credit card or debit card to pay for the rental and any additional charges.\n";
-    std::cout << "3. Rental Period: The rental period begins and ends on the dates and times specified in the rental agreement.\n";
-    std::cout << "4. Rental Car Condition: The car must be returned in the same condition as when it was rented, with no damage or excessive wear and tear.\n";
-    std::cout << "5. Mileage Limits: There may be limits on the number of miles the renter can drive the car during the rental period.\n";
-    std::cout << "6. Insurance: The rental company may offer optional insurance coverage for the renter.\n";
-    std::cout << "7. Additional Drivers: Additional drivers may be added to the rental agreement, but they must meet the same requirements as the primary renter.\n";
-    std::cout << "8. Prohibited Use: The car may not be used for illegal activities, racing, or off-road driving.\n";
-    std::cout << "9. Cancellation Policy: The rental company may have a policy for cancellations or changes to reservations.\n";
-    std::cout << "10. Refueling: The renter may be required to return the car with a full tank of gas.\n";
-    std::cout << "Do you agree to the terms and conditions?.(Y/N)\n";
-	
+	cout << "\n\nTerms and Conditions:\n";
+	cout << "1. Age Requirement: The driver must be of a certain age and must have a valid driver's license.\n";
+	cout << "2. Payment: The renter must provide a valid credit card or debit card to pay for the rental and any additional charges.\n";
+	cout << "3. Rental Period: The rental period begins and ends on the dates and times specified in the rental agreement.\n";
+	cout << "4. Rental Car Condition: The car must be returned in the same condition as when it was rented, with no damage or excessive wear and tear.\n";
+	cout << "5. Mileage Limits: There may be limits on the number of miles the renter can drive the car during the rental period.\n";
+	cout << "6. Insurance: The rental company may offer optional insurance coverage for the renter.\n";
+	cout << "7. Additional Drivers: Additional drivers may be added to the rental agreement, but they must meet the same requirements as the primary renter.\n";
+	cout << "8. Prohibited Use: The car may not be used for illegal activities, racing, or off-road driving.\n";
+	cout << "9. Cancellation Policy: The rental company may have a policy for cancellations or changes to reservations.\n";
+	cout << "10. Refueling: The renter may be required to return the car with a full tank of gas.\n";
+	cout << "Do you agree to the terms and conditions?.(Y/N)\n";
+
 	char ch;
-	cin>>ch;
-	if(ch=='Y'||ch=='y')
-	return 1;
+	cin >> ch;
+	if (ch == 'Y' || ch == 'y')
+		return 1;
 
 	return 0;
-
 }
 struct multiple
 {
@@ -106,7 +102,7 @@ public:
 			vector<multiple> vec(n);
 			while (cnt < n)
 			{
-				
+
 				cout << "\tPlease provide cumstomer details\n\n";
 				cout << "\tEnter first name : ";
 				cin >> first_name;
@@ -156,25 +152,21 @@ public:
 						break;
 				}
 
-
 				cout << "\n";
 				string lisc;
 				cout << "\tEnter Driving liscense no. : ";
 				cin >> lisc;
 				bool flag2;
-				flag2=tnc();
-				if(!flag2)
+				flag2 = tnc();
+				if (!flag2)
 				{
-					cout<<"\nCannot provide you with car without agreeing to Terms and Conditions";
+					cout << "\nCannot provide you with car without agreeing to Terms and Conditions";
 					exit(0);
 					// assert(flag2==1);
 				}
 				int val = purpose();
 				vec[cnt] = {val, first_name, last_name, contact, Aadhar, lisc};
 				cnt++;
-
-				cout << "Wait for 5 seconds\n";
-  				sleep(5);
 			}
 			sort(vec.begin(), vec.end(), cmp);
 			first_name = vec[0].fname;
@@ -203,66 +195,66 @@ class hatchback : public car
 public:
 	void get_data()
 	{
-		std::cout << left << std::setw(60) << "\t" YEL BOLD "------------------------------------------------------------------------------------" RESET << "\n";
+		cout << left << setw(60) << "\t" YELLOW BOLD "------------------------------------------------------------------------------------" RESET << "\n";
 
-		std::cout << left << std::setw(16) << "";
-		std::cout << left << std::setw(15) << "";
-		std::cout << left << std::setw(31) << RED "FORD FIGO" RESET;
-		std::cout << left << std::setw(33) << BLU BOLD "RITZ" RESET;
-		std::cout << left << std::setw(23) << MAG BOLD "BRIO" RESET;
+		cout << left << setw(16) << "";
+		cout << left << setw(15) << "";
+		cout << left << setw(31) << RED "FORD FIGO" RESET;
+		cout << left << setw(33) << BLU BOLD "RITZ" RESET;
+		cout << left << setw(23) << MAG BOLD "BRIO" RESET;
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MODEL NO" RESET;
-		std::cout << left << std::setw(20) << "5687";
-		std::cout << left << std::setw(20) << "7980";
-		std::cout << left << std::setw(20) << "3434";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MODEL NO" RESET;
+		cout << left << setw(20) << "5687";
+		cout << left << setw(20) << "7980";
+		cout << left << setw(20) << "3434";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MILEAGE" RESET;
-		std::cout << left << std::setw(20) << "12";
-		std::cout << left << std::setw(20) << "11";
-		std::cout << left << std::setw(20) << "14";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MILEAGE" RESET;
+		cout << left << setw(20) << "12";
+		cout << left << setw(20) << "11";
+		cout << left << setw(20) << "14";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COLOR" RESET;
-		std::cout << left << std::setw(20) << "Red";
-		std::cout << left << std::setw(20) << "Blue";
-		std::cout << left << std::setw(20) << "Violet";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COLOR" RESET;
+		cout << left << setw(20) << "Red";
+		cout << left << setw(20) << "Blue";
+		cout << left << setw(20) << "Violet";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COST" RESET;
-		std::cout << left << std::setw(20) << "1000/day";
-		std::cout << left << std::setw(20) << "1500/day";
-		std::cout << left << std::setw(20) << "1800/day";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COST" RESET;
+		cout << left << setw(20) << "1000/day";
+		cout << left << setw(20) << "1500/day";
+		cout << left << setw(20) << "1800/day";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "\t" YEL BOLD "-------------------------------------------------------------------------------------" RESET "\n";
+		cout << left << setw(20) << "\t" YELLOW BOLD "-------------------------------------------------------------------------------------" RESET "\n";
 	}
 	void display()
 	{
-		std::cout << std::setw(60) << "\t" GRN "--------------------------DETAILS OF HATCHBACK CARS--------------------------" RESET "\n\n";
-		std::cout << left << std::setw(20) << "";
+		cout << setw(60) << "\t" GREEN "--------------------------DETAILS OF HATCHBACK CARS--------------------------" RESET "\n\n";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n\n\n";
 
 		for (int i = 1; i <= cfigo; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_RED "FORD FIGO" RESET "\n\n";
 		}
 		for (int i = 1; i <= critz; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_BLU BOLD "RITZ" RESET "\n\n";
 		}
 		for (int i = 1; i <= cbrio; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_MAG BOLD "BRIO" RESET "\n\n";
 		}
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
 
 		cout << "\n";
@@ -344,66 +336,66 @@ class SUV : public car
 public:
 	void get_data()
 	{
-		std::cout << left << std::setw(20) << "\t" YEL BOLD "-------------------------------------------------------------------------------------" RESET;
+		cout << left << setw(20) << "\t" YELLOW BOLD "-------------------------------------------------------------------------------------" RESET;
 		cout << "\n";
-		std::cout << left << std::setw(16) << "";
-		std::cout << left << std::setw(15) << "";
-		std::cout << left << std::setw(31) << RED "FORTUNER" RESET;
-		std::cout << left << std::setw(33) << BLU BOLD "INNOVA" RESET;
-		std::cout << left << std::setw(23) << MAG BOLD "SCORPIO" RESET;
+		cout << left << setw(16) << "";
+		cout << left << setw(15) << "";
+		cout << left << setw(31) << RED "FORTUNER" RESET;
+		cout << left << setw(33) << BLU BOLD "INNOVA" RESET;
+		cout << left << setw(23) << MAG BOLD "SCORPIO" RESET;
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MODEL NO" RESET;
-		std::cout << left << std::setw(20) << "5687";
-		std::cout << left << std::setw(20) << "7980";
-		std::cout << left << std::setw(20) << "3434";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MODEL NO" RESET;
+		cout << left << setw(20) << "5687";
+		cout << left << setw(20) << "7980";
+		cout << left << setw(20) << "3434";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MILEAGE" RESET;
-		std::cout << left << std::setw(20) << "17";
-		std::cout << left << std::setw(20) << "15";
-		std::cout << left << std::setw(20) << "13";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MILEAGE" RESET;
+		cout << left << setw(20) << "17";
+		cout << left << setw(20) << "15";
+		cout << left << setw(20) << "13";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COLOR" RESET;
-		std::cout << left << std::setw(20) << "Red";
-		std::cout << left << std::setw(20) << "Blue";
-		std::cout << left << std::setw(20) << "Violet";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COLOR" RESET;
+		cout << left << setw(20) << "Red";
+		cout << left << setw(20) << "Blue";
+		cout << left << setw(20) << "Violet";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COST" RESET;
-		std::cout << left << std::setw(20) << "4800/day";
-		std::cout << left << std::setw(20) << "4500/day";
-		std::cout << left << std::setw(20) << "4000/day";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COST" RESET;
+		cout << left << setw(20) << "4800/day";
+		cout << left << setw(20) << "4500/day";
+		cout << left << setw(20) << "4000/day";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "\t" YEL BOLD "-------------------------------------------------------------------------------------" RESET "\n";
+		cout << left << setw(20) << "\t" YELLOW BOLD "-------------------------------------------------------------------------------------" RESET "\n";
 	}
 	void display()
 	{
-		std::cout << std::setw(60) << "\t" GRN "--------------------------------DETAILS OF SUV CARS--------------------------" RESET "\n\n";
-		std::cout << left << std::setw(20) << "";
+		cout << setw(60) << "\t" GREEN "--------------------------------DETAILS OF SUV CARS--------------------------" RESET "\n\n";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n\n\n";
 
 		for (int i = 1; i <= cfortuner; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_RED "FORTUNER" RESET "\n\n";
 		}
 		for (int i = 1; i <= cinnova; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_BLU BOLD "INNOVA" RESET "\n\n";
 		}
 		for (int i = 1; i <= cscorpio; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_MAG BOLD "SCORPIO" RESET "\n\n";
 		}
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
 
 		cout << "\n";
@@ -487,67 +479,67 @@ class Sedan : public car
 public:
 	void get_data()
 	{
-		std::cout << left << std::setw(20) << "\t" YEL BOLD "-------------------------------------------------------------------------------------" RESET;
+		cout << left << setw(20) << "\t" YELLOW BOLD "-------------------------------------------------------------------------------------" RESET;
 		cout << "\n";
 
-		std::cout << left << std::setw(16) << "";
-		std::cout << left << std::setw(15) << "";
-		std::cout << left << std::setw(31) << RED "INDIGO" RESET;
-		std::cout << left << std::setw(33) << BLU BOLD "ETHIOS" RESET;
-		std::cout << left << std::setw(23) << MAG BOLD "VERNA" RESET;
+		cout << left << setw(16) << "";
+		cout << left << setw(15) << "";
+		cout << left << setw(31) << RED "INDIGO" RESET;
+		cout << left << setw(33) << BLU BOLD "ETHIOS" RESET;
+		cout << left << setw(23) << MAG BOLD "VERNA" RESET;
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MODEL NO" RESET;
-		std::cout << left << std::setw(20) << "5687";
-		std::cout << left << std::setw(20) << "7980";
-		std::cout << left << std::setw(20) << "3434";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MODEL NO" RESET;
+		cout << left << setw(20) << "5687";
+		cout << left << setw(20) << "7980";
+		cout << left << setw(20) << "3434";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "MILEAGE" RESET;
-		std::cout << left << std::setw(20) << "15";
-		std::cout << left << std::setw(20) << "12";
-		std::cout << left << std::setw(20) << "11";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "MILEAGE" RESET;
+		cout << left << setw(20) << "15";
+		cout << left << setw(20) << "12";
+		cout << left << setw(20) << "11";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COLOR" RESET;
-		std::cout << left << std::setw(20) << "White";
-		std::cout << left << std::setw(20) << "Silver";
-		std::cout << left << std::setw(20) << "Black";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COLOR" RESET;
+		cout << left << setw(20) << "White";
+		cout << left << setw(20) << "Silver";
+		cout << left << setw(20) << "Black";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "";
-		std::cout << left << std::setw(20) << CYAN "COST" RESET;
-		std::cout << left << std::setw(20) << "3000/day";
-		std::cout << left << std::setw(20) << "3500/day";
-		std::cout << left << std::setw(20) << "3800/day";
+		cout << left << setw(20) << "";
+		cout << left << setw(20) << CYAN "COST" RESET;
+		cout << left << setw(20) << "3000/day";
+		cout << left << setw(20) << "3500/day";
+		cout << left << setw(20) << "3800/day";
 		cout << "\n";
-		std::cout << left << std::setw(20) << "\t" YEL BOLD "-------------------------------------------------------------------------------------" RESET "\n";
+		cout << left << setw(20) << "\t" YELLOW BOLD "-------------------------------------------------------------------------------------" RESET "\n";
 	}
 	void display()
 	{
-		std::cout << std::setw(60) << "\t" GRN "--------------------------------DETAILS OF SEDAN CARS------------------------------" RESET "\n\n";
-		std::cout << left << std::setw(20) << "";
+		cout << setw(60) << "\t" GREEN "--------------------------------DETAILS OF SEDAN CARS------------------------------" RESET "\n\n";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n\n\n";
 
 		for (int i = 1; i <= cindigo; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_RED "INDIGO" RESET "\n\n";
 		}
 		for (int i = 1; i <= cethios; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_BLU BOLD "ETHIOS" RESET "\n\n";
 		}
 		for (int i = 1; i <= cverna; i++)
 		{
-			std::cout << left << std::setw(20) << "";
+			cout << left << setw(20) << "";
 			cout << "|" B_MAG BOLD "VERNA" RESET "\n\n";
 		}
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
-		std::cout << left << std::setw(20) << "";
+		cout << left << setw(20) << "";
 		cout << "___________________________\n";
 
 		cout << "\n";
@@ -782,7 +774,7 @@ int main()
 			cout << "File cannot be read";
 
 		cout << "\t" RED "TOTAL RENT : " RESET << trent << endl;
-		cout << "\t" YEL "Thank You for visiting" RESET "\n";
+		cout << "\t" YELLOW "Thank You for visiting" RESET "\n";
 
 		exit(0);
 	}
